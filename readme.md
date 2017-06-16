@@ -1,4 +1,4 @@
-# Mapping 
+# Java Concurrency - mapping Locks to IDs solutions  
 
 How to achieve highly granular locking in a heavy multi concurrent Java code.
 
