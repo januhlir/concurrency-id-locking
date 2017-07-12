@@ -1,4 +1,4 @@
-package org.bitbucket.espinosa.concurrency.zzz.setlock;
+package org.bitbucket.espinosa.concurrency.idlock4_hashset;
 
 import org.bitbucket.espinosa.concurrency.util.BookingServiceAbstractTest;
 import org.bitbucket.espinosa.concurrency.util.StopwatchRule;

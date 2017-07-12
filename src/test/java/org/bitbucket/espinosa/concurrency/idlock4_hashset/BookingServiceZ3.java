@@ -1,4 +1,4 @@
-package org.bitbucket.espinosa.concurrency.zzz.setlock;
+package org.bitbucket.espinosa.concurrency.idlock4_hashset;
 
 import java.util.HashSet;
 import java.util.Set;
