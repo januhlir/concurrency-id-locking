@@ -39,9 +39,7 @@ WeakHashMap provides weak key and hash backed map. When key object become unrefe
 Note: WekHashMap does cleaning in `WeakHashMap.expungeStaleEntries()` method which is called, directly or indirectly, in every `get()`, `put()`, `remove()`, `resize()`, `size()`; 
 that is in every typical map operation.
 
-There are few caveats with WeakHashMap though:
-   * It is not thread safe; this can be easily remedied with Collections.synchronizedMap(), but this solution is much less performant then ConcurrentHashMap
-   * WeakHashMap, contrary to other Map implementations, uses 'object identity' instead of 'object equality', so it is not suitable for all scenarios.
+WeakHashMap is not thread safe; this can be easily remedied with Collections.synchronizedMap(), but this solution is much less performant then ConcurrentHashMap.
 
 
 
