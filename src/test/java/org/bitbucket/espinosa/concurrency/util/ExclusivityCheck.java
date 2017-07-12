@@ -33,11 +33,14 @@ public class ExclusivityCheck {
 	}
 
 	public void pretendDoingSomething() {
-		try {
-			waitRandomTime();
-		} catch (InterruptedException e) {
-			Thread.currentThread().interrupt();
-			throw new RuntimeException(e);
+		Thread.yield(); // increase chance of interleaving
+		if (TestConfig.doRandomWaits) {
+			try {
+				waitRandomTime();
+			} catch (InterruptedException e) {
+				Thread.currentThread().interrupt();
+				throw new RuntimeException(e);
+			}
 		}
 	}
 

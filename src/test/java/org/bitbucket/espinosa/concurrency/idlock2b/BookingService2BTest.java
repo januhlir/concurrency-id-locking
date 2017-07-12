@@ -1,6 +1,8 @@
 package org.bitbucket.espinosa.concurrency.idlock2b;
 
 import org.bitbucket.espinosa.concurrency.util.BookingServiceAbstractTest;
+import org.bitbucket.espinosa.concurrency.util.StopwatchRule;
+import org.junit.Rule;
 import org.junit.Test;
 
 /**
@@ -9,6 +11,9 @@ import org.junit.Test;
  * @author Espinosa
  */
 public class BookingService2BTest extends BookingServiceAbstractTest {
+	
+	@Rule
+    public StopwatchRule watcher = new StopwatchRule();
 	
 	@Test
 	public void testServiceThreadSafety() throws Exception {
