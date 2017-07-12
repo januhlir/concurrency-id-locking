@@ -19,9 +19,14 @@ import org.bitbucket.espinosa.concurrency.util.ExclusivityCheck;
  * @author Espinosa
  */
 public class BookingService2 implements BookingService {
-	// WeakHashMap has one caveat, contrary to other Map implementations it uses 'object identity' 
-	// instead of 'object equality', so it is not suitable for all scenarios.
+	// WeakHashMap uses, contrary to other Map implementations, uses 'object identity' 
+	// instead of 'object equality'. That shouldn't pose any problem, String and Integer based IDs certainly can be used. 
+	// It only means that retrieving "same" key from this map would yield null if the entry was garbage collected.
+	// Same key, as in having same value, not necessary same same instance as the original key. 
+	// In this lock storing context it is perfectly normal and to be expected.
+	
 	// WeakHashMap is not thread-safe, it has to be made thread safe externally
+	
 	private static final Map<Object, Object> idLocks = Collections.synchronizedMap(new WeakHashMap<>());
 	
 	private final ExclusivityCheck exch = new ExclusivityCheck();
